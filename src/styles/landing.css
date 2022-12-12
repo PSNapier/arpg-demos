@@ -1,0 +1,15 @@
+/* form */
+form {
+	margin-top: var(--stack-200);
+	margin-inline: auto;
+	width: 60vw;
+	padding: var(--padding-300);
+	/* border-radius: .5rem; */
+	text-align: center;
+}
+
+/* output */
+#output {
+	margin-top: var(--stack-200);
+	margin-inline: auto;
+}

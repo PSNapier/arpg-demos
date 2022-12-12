@@ -8,7 +8,6 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 		<!-- Page -->
-		<title>Breeding Roller</title>
 		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>">
 
 		<!-- Importing -->
@@ -17,23 +16,13 @@
 			integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
 			crossorigin="anonymous">
 		</script>
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-		<link rel="stylesheet" href="style.css">
-		<script 
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous" 
-			defer>
-		</script>
-		<script src="roller.js" defer></script>
+		<link rel="stylesheet" href="styles/core.css?v=<?php echo time(); ?>">
 	</head>
 
 	<body>
-		<div class="container text-center">
-			<p class="row justify-content-center">Text :></p>
-			<input type="text" id="sire" class="row mx-auto" placeholder="Sire"></input>
-			<input type="text" id="dam" class="row mx-auto" placeholder="Dam"></input>
-			<div id="offspring" class="row justify-content-center"></div>
-		</div>
+		<?php
+			include_once "pages/landing.php";
+		?>
 	</body>
 
 </html>
