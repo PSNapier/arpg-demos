@@ -12,4 +12,5 @@
 #output {
 	margin-top: var(--stack-200);
 	margin-inline: auto;
+	text-align: center;
 }
