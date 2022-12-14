@@ -50,7 +50,7 @@ function handleColour(sire, dam) {
 		}
 	}
 
-	function handleModifiers(dictionary) {
+	function handleNatural(dictionary) {
 		for (let i = 0; i < dictionary.length; i++) {
 			const geneDom = `${dictionary[i][1]}${dictionary[i][1]}`;
 			const geneRec = `n${dictionary[i][1]}`;
@@ -110,10 +110,22 @@ function handleColour(sire, dam) {
 		}
 	}
 
+	function handleMutationsV1() {
+		// nordanner-esque absolute odds
+	}
+
+	function handleMutationsV2() {
+		// custom rng percentages
+	}
+
 	handleBase(base.geno, base.pheno);
-	handleModifiers(dilutions);
+	handleNatural(dilutions);
 	handleKIT(KIT);
 	handleModifiers(whitePatterns);
+
+	function phenoReader() {
+		// pheno formatting
+	}
 
 	output.geno = output.geno.join(' ');
 	output.pheno = output.pheno.capitalizeArray().join(' ');
