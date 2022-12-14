@@ -1,13 +1,15 @@
-const baseGeno = [
-	['E', 'e'],
-	['At', 'A', 'a'],
-];
-const basePheno = [
-	['black', ['EE','Ee'],['aa']],
-	['seal-bay', ['EE','Ee'],['AtA','Ata']],
-	['bay', ['EE','Ee'],['AA','Aa']],
-	['chestnut', ['ee'],['AtA','Ata','AA','Aa','aa']],
-];
+const base = {
+	geno: [
+		['E', 'e'],
+		['At', 'A', 'a'],
+	],
+	pheno: [
+		['black', ['EE','Ee'],['aa']],
+		['seal-bay', ['EE','Ee'],['AtA','Ata']],
+		['bay', ['EE','Ee'],['AA','Aa']],
+		['chestnut', ['ee'],['AtA','Ata','AA','Aa','aa']],
+	],
+};
 
 const dilutions = [
 	['champagne', 'Ch'],
@@ -20,4 +22,11 @@ const whitePatterns = [
 	['splash', 'Spl'],
 	['overo', 'Ov'],
 	['rabicano', 'Rb'],
+];
+
+const KIT = [
+	['dominant-white', 'Wh'],
+	['roan', 'Rn'],
+	['tobiano', 'Tb'],
+	['sabino', 'Sb'],
 ];
