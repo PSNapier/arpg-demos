@@ -18,38 +18,30 @@ function handleColour(sire, dam) {
 	};
 
 	function handleBase() {
-		let dictionaryGeno = [
-			['E', 'e'],
-			['At', 'A', 'a'],
-		];
+		const dictionaryGeno = baseGeno;
 
 		for (let i = 0; i < dictionaryGeno.length; i++) {
 			const regexList = dictionaryGeno[i].join('|');
-			const regex1 = new RegExp(`\\b(${regexList})(${regexList})\\b`,'');
-			const genoDefault = dictionaryGeno[i][dictionaryGeno[i].length - 1];
-			const geno1 = sire.geno.matchy(regex1)[1] || genoDefault;
-			const geno2 = sire.geno.matchy(regex1)[2] || genoDefault;
-			const geno3 = dam.geno.matchy(regex1)[1] || genoDefault;
-			const geno4 = dam.geno.matchy(regex1)[2] || genoDefault;
+			const regex = new RegExp(`\\b(${regexList})(${regexList})\\b`,'');
+			const geneDefault = dictionaryGeno[i][dictionaryGeno[i].length - 1];
+			const gene1 = sire.geno.matchy(regex)[1] || geneDefault;
+			const gene2 = sire.geno.matchy(regex)[2] || geneDefault;
+			const gene3 = dam.geno.matchy(regex)[1] || geneDefault;
+			const gene4 = dam.geno.matchy(regex)[2] || geneDefault;
 			// console.log(geno1, geno2, geno3, geno4);
 
 			const matrix = [
-				[geno1, geno3].sortBasedOn(dictionaryGeno[i]),
-				[geno2, geno3].sortBasedOn(dictionaryGeno[i]),
-				[geno1, geno4].sortBasedOn(dictionaryGeno[i]),
-				[geno2, geno4].sortBasedOn(dictionaryGeno[i]),
+				[gene1, gene3].sortBasedOn(dictionaryGeno[i]),
+				[gene2, gene3].sortBasedOn(dictionaryGeno[i]),
+				[gene1, gene4].sortBasedOn(dictionaryGeno[i]),
+				[gene2, gene4].sortBasedOn(dictionaryGeno[i]),
 			];
 
 			const gene = randomizer(matrix).join('')
 			output.geno.push(gene);
 		}
 
-		let dictionaryPheno = [
-			['black', ['EE','Ee'],['aa']],
-			['seal-bay', ['EE','Ee'],['AtA','Ata']],
-			['bay', ['EE','Ee'],['AA','Aa']],
-			['chestnut', ['ee'],['AtA','Ata','AA','Aa','aa']],
-		];
+		const dictionaryPheno = basePheno;
 
 		for (let i = 0; i < dictionaryPheno.length; i++) {
 			if (dictionaryPheno[i][1].some((a) => output.geno.includes(a)) && dictionaryPheno[i][2].some((a) => output.geno.includes(a))) {
@@ -58,7 +50,39 @@ function handleColour(sire, dam) {
 		}
 	}
 
+	function handleModifiers(dictionary) {
+		for (let i = 0; i < dictionary.length; i++) {
+			const geneDom = `${dictionary[i][1]}${dictionary[i][1]}`;
+			const geneRec = `n${dictionary[i][1]}`;
+			const pheno = dictionary[i][0];
+			const regex = new RegExp(`\\b(${geneDom}|${geneRec})\\b`,'');
+			const geneSire = sire.geno.matchy(regex)[1] || false;
+			const geneDam = dam.geno.matchy(regex)[1] || false;
+
+			let gene = '';
+			if (geneSire === geneDom && geneDam === geneDom) {
+				gene = geneDom;
+			}
+			else if (geneSire === geneDom && geneDam === geneRec || geneSire === geneRec && geneDam === geneDom) {
+				gene = randomizer([geneDom, geneRec]);
+			}
+			else if (geneSire === geneDom && !geneDam || !geneSire && geneDam === geneDom) {
+				gene = geneRec;
+			}
+			else if (geneSire === geneRec && geneDam === geneRec || geneSire === geneRec && geneDam === geneRec) {
+				gene = randomizer([geneDom, geneRec, geneRec, '']);
+			}
+			else if (geneSire === geneRec && !geneDam || !geneSire && geneDam === geneRec) {
+				gene = randomizer([geneRec, '']);
+			}
+
+			gene !== '' && output.geno.push(gene) && output.pheno.push(pheno);
+		}
+	}
+
 	handleBase();
+	handleModifiers(dilutions);
+	handleModifiers(whitePatterns);
 
 	output.geno = output.geno.join(' ');
 	output.pheno = output.pheno.capitalizeArray().join(' ');
