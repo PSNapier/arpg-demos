@@ -81,6 +81,7 @@ function handleColour(sire, dam) {
 	}
 
 	function handleKIT(dictionary) {
+		// NOTE: KIT limit has not been implemented
 		for (let i = 0; i < dictionary.length; i++) {
 			const geneDom = `${dictionary[i][1]}${dictionary[i][1]}`;
 			const geneRec = `${dictionary[i][1]}`;
@@ -121,7 +122,7 @@ function handleColour(sire, dam) {
 	handleBase(base.geno, base.pheno);
 	handleNatural(dilutions);
 	handleKIT(KIT);
-	handleModifiers(whitePatterns);
+	handleNatural(whitePatterns);
 
 	function phenoReader() {
 		// pheno formatting
