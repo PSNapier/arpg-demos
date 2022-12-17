@@ -124,9 +124,24 @@ function handleColour(sire, dam) {
 	handleKIT(KIT);
 	handleNatural(whitePatterns);
 
-	function phenoReader() {
+	function phenoReader(dictionary) {
 		// pheno formatting
+		for (let i = 0; i < dictionary.length; i++) {
+			// const pheno = dictionary[i][0];
+			const regexBase = new RegExp(`\\b(${dictionary[i][1][0]})\\b`);
+			const regexGene = new RegExp(`\\b(${dictionary[i][1][1]})\\b`);
+
+			const basePresent = dictionary[i][1][0] !== '' && output.pheno.includes(regexBase) || true;
+			const genePresent = output.geno.includes(regexGene);
+			if (!genePresent || !basePresent) {
+				continue;
+			}
+
+			// replace occurrences of [i[1][0] in output.pheno with [i][0]
+		}
 	}
+
+	phenoReader(overrides);
 
 	output.geno = output.geno.join(' ');
 	output.pheno = output.pheno.capitalizeArray().join(' ');
