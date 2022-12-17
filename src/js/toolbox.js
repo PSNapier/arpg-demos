@@ -41,3 +41,8 @@ Object.prototype.capitalizeArray = function() {
   }
   return newArray;
 }
+
+/* UI */
+function slideLeft(id) {
+	$(`#${id}`).toggle();
+}

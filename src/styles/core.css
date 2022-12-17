@@ -17,7 +17,9 @@
 	--color-dark: hsl(0, 0%, 5%);
 	--color-dark-alt: hsl(0, 0%, 15%);
 	--color-light: hsl(0, 0%, 99%);
+	--color-light-alt: hsl(0, 0%, 90%);
 	--color-alert: hsl(345, 90%, 50%);
+	--color-transparent: hsla(0, 0%, 0%, 0%);
 
 	/* padding */
 	--padding-100: 0.25rem;
@@ -170,12 +172,21 @@ button {
 	transition: 250ms;
 }
 
-button:hover {
+button:hover,
+button:active {
+	filter: opacity(.75);
 }
 
-button:active {
-	background-color: var(--color-dark-alt);
-	filter: brightness(150%);
+.button-icon {
+	background-color: var(--color-transparent);
+	color: var(--color-dark);
+}
+
+.button-icon:hover,
+.button-icon:active {
+	background-color: var(--color-transparent);
+	color: var(--color-dark);
+	filter: opacity(.5);
 }
 
 /* input */
