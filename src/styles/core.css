@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&family=Roboto:wght@300&display=swap');
 
 :root {
 	/* fonts */
 	--font-200: 'Asap', serif;
-	--font-100: 'Roboto Condensed', sans-serif;
+	--font-100: 'Roboto', sans-serif;
 	
 	/* rainbow */
 	/* --color-rainbow-pink: hsl(340, 92%, 59%);
@@ -13,7 +13,7 @@
 	--color-rainbow-yellow: hsl(41, 77%, 66%); */
 
 	/* colors */
-	--color-primary: hsl(41, 77%, 66%);
+	--color-accent: hsl(187, 80%, 51%);
 	--color-dark: hsl(0, 0%, 5%);
 	--color-dark-alt: hsl(0, 0%, 15%);
 	--color-light: hsl(0, 0%, 99%);
@@ -29,6 +29,7 @@
 	/* stacks */
 	--stack-100: 0.75rem;
 	--stack-200: 2.25rem;
+	--stack-300: 3.50rem;
 }
 
 /* semantic */
@@ -58,7 +59,7 @@ body {
 	text-rendering: optimizeSpeed;
 	font-family: var(--font-100);
 	text-align: justify;
-	font-size: 1.5rem;
+	font-size: 1.60rem;
 	line-height: 1;
 	background-color: var(--color-light);
 	color: var(--color-dark-alt);
@@ -71,7 +72,7 @@ body:focus-within {
 article {
 	/* padding-block: 1.25rem; */
 	/* padding-inline: 1.25rem; */
-	height: 100vh;
+	/* height: 100vh; */
 	display: flex;
 	flex-flow: column wrap;
 }
@@ -164,8 +165,8 @@ li::before {
 button {
 	background-color: var(--color-dark);
 	color: var(--color-light);
-	padding-block: var(--padding-100);
-	padding-inline: var(--padding-200);
+	padding-block: var(--padding-200);
+	padding-inline: var(--padding-300);
 	border: none;
 	font-weight: bold;
 	cursor: pointer;
@@ -174,7 +175,7 @@ button {
 
 button:hover,
 button:active {
-	filter: opacity(.75);
+	transform: scale(1.1);
 }
 
 .button-icon {
@@ -206,7 +207,6 @@ select {
 label {
 	unset: all;
 	display: inline-block;
-	width: 60px;
 	text-align: left;
 }
 
@@ -222,6 +222,10 @@ label {
 
 .stack-200 {
 	margin-bottom: var(--stack-200);
+}
+
+.stack-300 {
+	margin-bottom: var(--stack-300);
 }
 
 /* row spacing */
@@ -282,4 +286,8 @@ label {
 
 .hidden {
 	display: none;
+}
+
+.single-line {
+	white-space: nowrap;
 }

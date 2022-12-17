@@ -14,10 +14,15 @@ const base = {
 const dilutions = [
 	['champagne', 'Ch'],
 	['cream', 'Cr'],
+	['dun', 'D'],
+	['flaxen', 'F'],
+	['pangare', 'P'],
+	['pearl', 'Prl'],
 	['silver', 'Z'],
 	['sooty', 'Sty'],
 ];
 const whitePatterns = [
+	['grey', 'G'],
 	['appaloosa', 'Lp'],
 	['splash', 'Spl'],
 	['overo', 'Ov'],

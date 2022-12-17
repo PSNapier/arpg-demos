@@ -42,7 +42,26 @@ Object.prototype.capitalizeArray = function() {
   return newArray;
 }
 
+// capitalize string
+Object.prototype.capitalizeString = function() {
+	let breakdown = this.split(/\b/);
+	return breakdown.capitalizeArray().join('');
+}
+
 /* UI */
 function slideLeft(id) {
 	$(`#${id}`).toggle();
 }
+
+function unicorn() {
+	const colors = [
+		'hsl(187, 80%, 51%)', // cyan
+		'hsl(143, 59%, 48%)', // green
+		'hsl(41, 77%, 66%)', // yellow
+		'hsl(26, 85%, 65%)', // orange
+		'hsl(345, 85%, 62%)', // pink
+		'hsl(299deg 39% 59%)', // purple
+	]
+	document.body.style.setProperty('--color-accent', randomizer(colors));
+}
+unicorn();

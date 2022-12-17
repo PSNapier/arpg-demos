@@ -1,3 +1,26 @@
+/* min size */
+body,
+#decoration,
+#input {
+	min-width: 400px;
+}
+
+article {
+	height: 100vh;
+}
+
+/* decoration */
+#decoration {
+	position: absolute;
+	top: 0px;
+	z-index: -100;
+}
+
+#decoration path {
+	fill: var(--color-accent);
+	filter: opacity(.30);
+}
+
 /* legend */
 #legend {
 	position: absolute;
@@ -9,26 +32,66 @@
 }
 
 #legend-drawer {
-	height: 100%;
-	width: 33vw;
+	min-height: 100%;
 	padding-block: var(--padding-200);
 	padding-inline: var(--padding-300);
-	background-color: var(--color-light-alt);
+	background-color: var(--color-accent);
+	text-align: left;
+	backdrop-filter: blur(25px);
+	filter: opacity(.75);
 }
 
 /* form */
 #input {
-	margin-top: var(--stack-200);
 	margin-inline: auto;
-	width: 60vw;
-	padding: var(--padding-300);
+	width: 100vw;
+	padding-inline: var(--padding-300);
 	/* border-radius: .5rem; */
 	text-align: center;
 }
 
+label {
+	width: 60px;
+	margin-right: 10px;
+}
+
+@media (min-width: 1080px) {
+	#input {
+		width: 60vw;
+	}
+}
+
 /* output */
 #output {
-	margin-top: var(--stack-200);
+	padding-inline: var(--padding-200);
 	margin-inline: auto;
 	text-align: center;
+}
+
+#output,
+#output * {
+	user-select: text;
+}
+
+/* spacing */
+#input div {
+	margin-top: var(--stack-100);
+}
+
+#input button {
+	margin-top: var(--stack-200);
+}
+
+#input,
+#output {
+	margin-top: var(--stack-300);
+}
+
+/* footer */
+footer {
+	position: absolute;
+	bottom: 5px;
+	font-size: 60%;
+	text-align: center;
+	width: 100%;
 }
