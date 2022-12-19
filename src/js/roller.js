@@ -127,17 +127,31 @@ function handleColour(sire, dam) {
 	function phenoReader(dictionary) {
 		// pheno formatting
 		for (let i = 0; i < dictionary.length; i++) {
-			// const pheno = dictionary[i][0];
-			const regexBase = new RegExp(`\\b(${dictionary[i][1][0]})\\b`);
-			const regexGene = new RegExp(`\\b(${dictionary[i][1][1]})\\b`);
+			const pheno = dictionary[i][0];
+			const base = dictionary[i][1][0];
+			const gene = dictionary[i][1][1];
 
-			const basePresent = dictionary[i][1][0] !== '' && output.pheno.includes(regexBase) || true;
-			const genePresent = output.geno.includes(regexGene);
+			const regexBase = new RegExp(`\\b(${base})\\b`);
+			const regexGene = new RegExp(`\\b(${gene})\\b`);
+
+			const basePresent = output.pheno.includes(regexBase);
+			const genePresent = output.pheno.includes(regexGene);
 			if (!genePresent || !basePresent) {
 				continue;
 			}
-
-			// replace occurrences of [i[1][0] in output.pheno with [i][0]
+			const specificity = dictionary[i][1][2] && false || true;
+			const specificityGene = output.geno.includes(dictionary[i][1][2]);
+			if (specificity && !specificityGene) {
+				continue;
+			}
+			
+			// replace occurrences of [i][1][0] in output.pheno with [i][0]
+			const x = offspring.pheno.indexOf(base);
+			const y = offspring.pheno.indexOf(gene);
+			if (x > -1 && y > -1) {
+				offspring.pheno[x] = pheno;
+				offspring.pheno[y] = '';
+			}
 		}
 	}
 

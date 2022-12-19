@@ -37,27 +37,27 @@ const KIT = [
 ];
 
 const overrides = [
-	// grey & dom-white
-	// ['dominant-white', ['','WhWh|Wh']],
-	// ['grey', ['','GG|nG']],
+	// cream
+	['smoky-cream', ['black','cream','CrCr']],
+	['perlino', ['seal-bay','cream','CrCr']],
+	['perlino', ['bay','cream','CrCr']],
+	['cremello', ['chestnut','cream','CrCr']],
+	['smoky-black', ['black','cream','nCr']],
+	['buckskin', ['seal-bay','cream','nCr']],
+	['buckskin', ['bay','cream','nCr']],
+	['palomino', ['chestnut','cream','nCr']],
 	// champagne
-	['smoky-cream', ['black','CrCr']],
-	['perlino', ['seal-bay|bay','CrCr']],
-	['cremello', ['chestnut','CrCr']],
-	['smoky-black', ['black','nCr']],
-	['buckskin', ['seal-bay|bay','nCr']],
-	['palomino', ['chestnut','nCr']],
-	// champagne
-	['classic-champagne', ['black','ChCh|nCh']],
-	['amber-champagne', ['seal-bay|bay','ChCh|nCh']],
-	['gold-champagne', ['chestnut','ChCh|nCh']],
+	['classic-champagne', ['black','champagne']],
+	['amber-champagne', ['seal-bay','champagne']],
+	['amber-champagne', ['bay','champagne']],
+	['gold-champagne', ['chestnut','champagne']],
 	// dun
-	['dunskin', ['buckskin','DD|nD']],
-	['grullo', ['black','DD|nD']],
-	['coyote-dun', ['seal-bay|bay','DD|nD']],
-	['red-dun', ['chestnut','DD|nD']],
+	['dunskin', ['buckskin','dun']],
+	['grullo', ['black','dun']],
+	['coyote-dun', ['seal-bay','dun']],
+	['coyote-dun', ['bay','dun']],
+	['red-dun', ['chestnut','dun']],
 	// roan
-	['-roan', ['','RnRn|Rn']],
-	['blue-roan', ['black-roan','RnRn|Rn']],
-	['strawberry-roan', ['chestnut-roan','RnRn|Rn']],
+	['blue-roan', ['black','roan']],
+	['strawberry-roan', ['chestnut','roan']],
 ]
