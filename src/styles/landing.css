@@ -1,12 +1,8 @@
-/* min size */
-body,
-#decoration,
-#input {
-	min-width: 400px;
-}
-
-article {
+/* ? */
+#wrapper {
 	height: 100vh;
+	display: flex;
+	flex-flow: column wrap;
 }
 
 /* decoration */
@@ -89,8 +85,9 @@ label {
 
 /* footer */
 footer {
-	position: absolute;
-	bottom: 5px;
+	/* position: absolute; */
+	/* bottom: 5px; */
+	align-self: flex-end;
 	font-size: 60%;
 	text-align: center;
 	width: 100%;
