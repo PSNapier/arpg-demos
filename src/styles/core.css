@@ -274,6 +274,11 @@ label {
 	font-family: var(--font-200);
 }
 
+/* Ion Icons */
+ion-icon {
+ 	pointer-events: none;
+}
+
 /* utility */
 .no-shadow *,
 .no-shadow *:hover {

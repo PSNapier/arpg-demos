@@ -1,8 +1,13 @@
 /* ? */
 #wrapper {
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	flex-flow: column wrap;
+	overflow: hidden;
+}
+
+article {
+	flex-grow: 1;
 }
 
 /* decoration */
@@ -19,22 +24,25 @@
 
 /* legend */
 #legend {
-	position: absolute;
 	z-index: 100;
+	position: absolute;
 	right: 0px;
-	height: 100vh;
 	display: flex;
 	align-items: flex-start;
 }
 
+#legend-button {
+	padding: var(--padding-200);
+}
+
 #legend-drawer {
-	min-height: 100%;
+	height: 100%;
 	padding-block: var(--padding-200);
 	padding-inline: var(--padding-300);
 	background-color: var(--color-accent);
 	text-align: left;
 	backdrop-filter: blur(25px);
-	filter: opacity(.75);
+	filter: opacity(.85);
 }
 
 /* form */
@@ -42,7 +50,6 @@
 	margin-inline: auto;
 	width: 100vw;
 	padding-inline: var(--padding-300);
-	/* border-radius: .5rem; */
 	text-align: center;
 }
 
@@ -84,11 +91,13 @@ label {
 }
 
 /* footer */
+article + footer {
+	margin-top: var(--stack-200);
+}
+
 footer {
-	/* position: absolute; */
-	/* bottom: 5px; */
-	align-self: flex-end;
 	font-size: 60%;
 	text-align: center;
 	width: 100%;
+	padding: var(--padding-200)
 }

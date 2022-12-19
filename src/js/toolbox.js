@@ -65,3 +65,11 @@ function unicorn() {
 	document.body.style.setProperty('--color-accent', randomizer(colors));
 }
 unicorn();
+
+// NOTE: JQuery no worky. Boo.
+// function fixHeight(id) {
+// 	const fix = $(`#wrapper`).height();
+// 	$(`#${legend}`).height(fix);
+// }
+
+// $('#wrapper').resize(fixHeight('legend'));
