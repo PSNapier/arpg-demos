@@ -12,11 +12,13 @@ class Offspring {
 }
 
 function handleColour(sire, dam) {
+	// SETUP
 	let output = {
 		geno: [],
 		pheno: [],
 	};
 
+	// ROLL GENO
 	function handleBase(baseGeno, basePheno) {
 		const dictionaryGeno = baseGeno;
 
@@ -124,6 +126,7 @@ function handleColour(sire, dam) {
 	handleKIT(KIT);
 	handleNatural(whitePatterns);
 
+	// PHENO OVERRIDES
 	function phenoReader(dictionary) {
 		main:
 		for (let i = 0; i < dictionary.length; i++) {
@@ -151,6 +154,7 @@ function handleColour(sire, dam) {
 
 	phenoReader(overrides);
 
+	// FINALIZE
 	output.geno = output.geno.join(' ');
 	output.pheno = output.pheno.join(' ').capitalizeString();
 	return output;
