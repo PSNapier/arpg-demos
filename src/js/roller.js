@@ -125,33 +125,26 @@ function handleColour(sire, dam) {
 	handleNatural(whitePatterns);
 
 	function phenoReader(dictionary) {
-		// pheno formatting
 		for (let i = 0; i < dictionary.length; i++) {
 			const pheno = dictionary[i][0];
 			const base = dictionary[i][1][0];
 			const gene = dictionary[i][1][1];
 
-			const regexBase = new RegExp(`\\b(${base})\\b`);
-			const regexGene = new RegExp(`\\b(${gene})\\b`);
-
-			const basePresent = output.pheno.includes(regexBase);
-			const genePresent = output.pheno.includes(regexGene);
+			const basePresent = output.pheno.includes(base);
+			const genePresent = output.pheno.includes(gene);
 			if (!genePresent || !basePresent) {
 				continue;
 			}
 			const specificity = dictionary[i][1][2] && false || true;
-			const specificityGene = output.geno.includes(dictionary[i][1][2]);
-			if (specificity && !specificityGene) {
+			const specificityCheck = output.geno.includes(dictionary[i][1][2]);
+			if (specificity && !specificityCheck) {
 				continue;
 			}
-			
-			// replace occurrences of [i][1][0] in output.pheno with [i][0]
-			const x = offspring.pheno.indexOf(base);
-			const y = offspring.pheno.indexOf(gene);
-			if (x > -1 && y > -1) {
-				offspring.pheno[x] = pheno;
-				offspring.pheno[y] = '';
-			}
+
+			const x = output.pheno.indexOf(base);
+			const y = output.pheno.indexOf(gene);
+			output.pheno[x] = pheno;
+			output.pheno[y] = '';
 		}
 	}
 
