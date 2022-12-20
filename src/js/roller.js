@@ -125,33 +125,34 @@ function handleColour(sire, dam) {
 	handleNatural(whitePatterns);
 
 	function phenoReader(dictionary) {
+		main:
 		for (let i = 0; i < dictionary.length; i++) {
-			const pheno = dictionary[i][0];
-			const base = dictionary[i][1][0];
-			const gene = dictionary[i][1][1];
-
-			const basePresent = output.pheno.includes(base);
-			const genePresent = output.pheno.includes(gene);
-			if (!genePresent || !basePresent) {
-				continue;
+			// check all phenos
+			for (let pheno of dictionary[i].checkPheno) {
+				if (!output.pheno.includes(pheno)) {
+					continue main;
+				}
 			}
-			const specificity = dictionary[i][1][2] && false || true;
-			const specificityCheck = output.geno.includes(dictionary[i][1][2]);
-			if (specificity && !specificityCheck) {
-				continue;
+			// check all genos
+			if (dictionary[i].checkGeno) {
+				for (let geno of dictionary[i].checkGeno) {
+					if (!output.geno.includes(geno)) {
+						continue main;
+					}
+				}
 			}
-
-			const x = output.pheno.indexOf(base);
-			const y = output.pheno.indexOf(gene);
-			output.pheno[x] = pheno;
-			output.pheno[y] = '';
+			// set all phenos
+			for (let pheno of dictionary[i].setPheno) {
+				const y = output.pheno.indexOf(pheno[0]);
+				output.pheno[y] = pheno[1];
+			}
 		}
 	}
 
 	phenoReader(overrides);
 
 	output.geno = output.geno.join(' ');
-	output.pheno = output.pheno.capitalizeArray().join(' ');
+	output.pheno = output.pheno.join(' ').capitalizeString();
 	return output;
 }
 

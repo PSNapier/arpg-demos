@@ -36,28 +36,33 @@ const KIT = [
 	['sabino', 'Sb'],
 ];
 
+// NOTE: possible better format
 const overrides = [
 	// cream
-	['smoky-cream', ['black','cream','CrCr']],
-	['perlino', ['seal-bay','cream','CrCr']],
-	['perlino', ['bay','cream','CrCr']],
-	['cremello', ['chestnut','cream','CrCr']],
-	['smoky-black', ['black','cream','nCr']],
-	['buckskin', ['seal-bay','cream','nCr']],
-	['buckskin', ['bay','cream','nCr']],
-	['palomino', ['chestnut','cream','nCr']],
+	{ checkPheno: ['black','cream'], checkGeno: ['CrCr'], setPheno: [['cream',''],['black','smoky-cream']] },
+	{ checkPheno: ['seal-bay','cream'], checkGeno: ['CrCr'], setPheno: [['cream',''],['seal-bay','perlino']] },
+	{ checkPheno: ['bay','cream'], checkGeno: ['CrCr'], setPheno: [['cream',''],['bay','perlino']] },
+	{ checkPheno: ['chestnut','cream'], checkGeno: ['CrCr'], setPheno: [['cream',''],['chestnut','cremello']] },
+	{ checkPheno: ['black','cream'], checkGeno: ['nCr'], setPheno: [['cream',''],['black','smoky-black']] },
+	{ checkPheno: ['seal-bay','cream'], checkGeno: ['nCr'], setPheno: [['cream',''],['seal-bay','buckskin']] },
+	{ checkPheno: ['bay','cream'], checkGeno: ['nCr'], setPheno: [['cream',''],['bay','buckskin']] },
+	{ checkPheno: ['chestnut','cream'], checkGeno: ['nCr'], setPheno: [['cream',''],['chestnut','palomino']] },
 	// champagne
-	['classic-champagne', ['black','champagne']],
-	['amber-champagne', ['seal-bay','champagne']],
-	['amber-champagne', ['bay','champagne']],
-	['gold-champagne', ['chestnut','champagne']],
+	{ checkPheno: ['black','champagne'], setPheno: [['champagne',''],['black','classic-champagne']] },
+	{ checkPheno: ['seal-bay','champagne'], setPheno: [['champagne',''],['seal-bay','amber-champagne']] },
+	{ checkPheno: ['bay','champagne'], setPheno: [['champagne',''],['bay','amber-champagne']] },
+	{ checkPheno: ['chestnut','champagne'], setPheno: [['champagne',''],['chestnut','gold-champagne']] },
 	// dun
-	['dunskin', ['buckskin','dun']],
-	['grullo', ['black','dun']],
-	['coyote-dun', ['seal-bay','dun']],
-	['coyote-dun', ['bay','dun']],
-	['red-dun', ['chestnut','dun']],
+	{ checkPheno: ['black','dun'], setPheno: [['dun',''],['black','grullo']] },
+	{ checkPheno: ['seal-bay','dun'], setPheno: [['dun',''],['seal-bay','coyote-dun']] },
+	{ checkPheno: ['bay','dun'], setPheno: [['dun',''],['bay','coyote-dun']] },
+	{ checkPheno: ['chestnut','dun'], setPheno: [['dun',''],['chestnut','red-dun']] },
+	// flaxen
+	{ checkPheno: ['black','flaxen'], setPheno: [['flaxen','flaxen-carrier']] },
+	{ checkPheno: ['seal-bay','flaxen'], setPheno: [['flaxen','flaxen-carrier']] },
+	{ checkPheno: ['bay','flaxen'], setPheno: [['flaxen','flaxen-carrier']] },
+	{ checkPheno: ['chestnut','flaxen'], setPheno: [['flaxen',''],['chestnut','Flaxen-Chestnut']] },
 	// roan
-	['blue-roan', ['black','roan']],
-	['strawberry-roan', ['chestnut','roan']],
-]
+	{ checkPheno: ['black','roan'], setPheno: [['roan',''],['black','blue-roan']] },
+	{ checkPheno: ['chestnut','roan'], setPheno: [['roan',''],['chestnut','strawberry-roan']] },
+];
