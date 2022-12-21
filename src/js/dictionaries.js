@@ -1,3 +1,4 @@
+// BASE
 const base = {
 	geno: [
 		['E', 'e'],
@@ -11,6 +12,7 @@ const base = {
 	],
 };
 
+// NATURAL
 const dilutions = [
 	['champagne', 'Ch'],
 	['cream', 'Cr'],
@@ -29,6 +31,7 @@ const whitePatterns = [
 	['rabicano', 'Rb'],
 ];
 
+// KIT
 const KIT = [
 	['dominant-white', 'Wh'],
 	['roan', 'Rn'],
@@ -36,6 +39,17 @@ const KIT = [
 	['sabino', 'Sb'],
 ];
 
+// ABSOLUTE
+const absolute = [
+	['absolute-mutation', 'Am'],
+]
+
+// PERCENTAGE
+const percentage = [
+	['percentage-mutation', 'Pm'],
+]
+
+// OVERRIDES
 // NOTE: possible better format
 const overrides = [
 	// cream
@@ -61,7 +75,7 @@ const overrides = [
 	{ checkPheno: ['black','flaxen'], setPheno: [['flaxen','flaxen-carrier']] },
 	{ checkPheno: ['seal-bay','flaxen'], setPheno: [['flaxen','flaxen-carrier']] },
 	{ checkPheno: ['bay','flaxen'], setPheno: [['flaxen','flaxen-carrier']] },
-	{ checkPheno: ['chestnut','flaxen'], setPheno: [['flaxen',''],['chestnut','Flaxen-Chestnut']] },
+	{ checkPheno: ['chestnut','flaxen'], setPheno: [['flaxen',''],['chestnut','flaxen-chestnut']] },
 	// roan
 	{ checkPheno: ['black','roan'], setPheno: [['roan',''],['black','blue-roan']] },
 	{ checkPheno: ['chestnut','roan'], setPheno: [['roan',''],['chestnut','strawberry-roan']] },

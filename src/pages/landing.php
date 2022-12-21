@@ -30,8 +30,10 @@
 			</div>
 			<button onclick="roll()">Roll Foal!</button>
 		</div>
-		<div id="output" class="row justify-content-center"><b>Geno:</b> Ee Aa...<br><b>Pheno:</b> Bay...
-		<!-- <b>Geno:</b> Ee Aa...<br><b>Pheno:</b> Bay...<b>Geno:</b> Ee Aa...<br><b>Pheno:</b> Bay...<b>Geno:</b> Ee Aa...<br><b>Pheno:</b> Bay...<b>Geno:</b> Ee Aa...<br><b>Pheno:</b> Bay...<b>Geno:</b> Ee Aa...<br><b>Pheno:</b> Bay...<b>Geno:</b> Ee Aa...<br><b>Pheno:</b> Bay...<b>Geno:</b> Ee Aa...<br><b>Pheno:</b> Bay...<b>Geno:</b> Ee Aa...<br><b>Pheno:</b> Bay...<b>Geno:</b> Ee Aa...<br><b>Pheno:</b> Bay...<b>Geno:</b> Ee Aa...<br><b>Pheno:</b> Bay...<b>Geno:</b> Ee Aa...<br><b>Pheno:</b> Bay... -->
+		<div id="output" class="row justify-content-center">
+			<b>Sex:</b> Stallion
+			<br><b>Geno:</b> Ee Aa...
+			<br><b>Pheno:</b> Bay...
 		</div>
 	</article>
 

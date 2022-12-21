@@ -7,6 +7,7 @@ class Parent {
 class Offspring {
 	constructor(offspring, sire, dam) {
 		// console.log(`Sire: ${sire.geno}\nDam: ${dam.geno}`);
+		this.sex = randomizer(['stallion','mare']).capitalizeString();
 		this.colour = handleColour(sire, dam);
 	}
 }
@@ -113,11 +114,35 @@ function handleColour(sire, dam) {
 		}
 	}
 
-	function handleMutationsV1() {
+	function handleAbsolute(dictionary) {
 		// nordanner-esque absolute odds
+		for (let i = 0; i < dictionary.length; i++) {
+			const geneDom = `${dictionary[i][1]}${dictionary[i][1]}`;
+			const geneRec = `n${dictionary[i][1]}`;
+			const pheno = dictionary[i][0];
+			const regex = new RegExp(`\\b(${geneDom}|${geneRec})\\b`,'');
+			const geneSire = sire.geno.matchy(regex)[1] || false;
+			const geneDam = dam.geno.matchy(regex)[1] || false;
+
+			let gene = '';
+			if (geneSire === geneDom && geneDam === geneDom) {
+				gene = geneDom;
+			}
+			else if (geneSire === geneDom && geneDam === geneRec || geneSire === geneRec && geneDam === geneDom) {
+				gene = geneDom;
+			}
+			else if (geneSire === geneDom && !geneDam || !geneSire && geneDam === geneDom) {
+				gene = geneRec;
+			}
+			else if (geneSire === geneRec && geneDam === geneRec || geneSire === geneRec && geneDam === geneRec) {
+				gene = geneRec;
+			}
+
+			gene !== '' && output.geno.push(gene) && output.pheno.push(pheno);
+		}
 	}
 
-	function handleMutationsV2() {
+	function handlePercentage(dictionary) {
 		// custom rng percentages
 	}
 
@@ -125,6 +150,7 @@ function handleColour(sire, dam) {
 	handleNatural(dilutions);
 	handleKIT(KIT);
 	handleNatural(whitePatterns);
+	handleAbsolute(absolute);
 
 	// PHENO OVERRIDES
 	function phenoReader(dictionary) {
@@ -164,6 +190,7 @@ function roll() {
 	const sire = new Parent('sire');
 	const dam = new Parent('dam');
 	const offspring = new Offspring('offspring', sire, dam);
-	$('#output').html(`<b>Geno:</b> ${offspring.colour.geno}
+	$('#output').html(`<b>Sex:</b> ${offspring.sex}
+	<br><b>Geno:</b> ${offspring.colour.geno}
 	<br><b>Pheno:</b> ${offspring.colour.pheno}`);
 }

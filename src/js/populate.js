@@ -9,7 +9,7 @@ function populateLegend(id) {
 	}
 	output.push('');
 
-	const lists = [dilutions, whitePatterns, KIT];
+	const lists = [dilutions, KIT, whitePatterns, absolute, percentage];
 	for (let i = 0; i < lists.length; i++) {
 		for (let j = 0, list = lists[i]; j < list.length; j++) {
 			const pheno = `${list[j][0].capitalizeString()}`;
