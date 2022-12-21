@@ -44,11 +44,6 @@ const absolute = [
 	['absolute-mutation', 'Am'],
 ]
 
-// PERCENTAGE
-const percentage = [
-	['percentage-mutation', 'Pm'],
-]
-
 // OVERRIDES
 // NOTE: possible better format
 const overrides = [

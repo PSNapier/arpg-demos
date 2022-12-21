@@ -73,3 +73,9 @@ unicorn();
 // }
 
 // $('#wrapper').resize(fixHeight('legend'));
+
+(function() {
+	if (navigator.userAgent.indexOf("Chrome") !== -1) {
+		$('#browser').remove();
+	}
+})();

@@ -142,10 +142,6 @@ function handleColour(sire, dam) {
 		}
 	}
 
-	function handlePercentage(dictionary) {
-		// custom rng percentages
-	}
-
 	handleBase(base.geno, base.pheno);
 	handleNatural(dilutions);
 	handleKIT(KIT);

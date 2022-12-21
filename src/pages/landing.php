@@ -21,9 +21,13 @@
 		</svg>
 
 		<div id="input">
-			<h2>Breeding Roller Demo</h2>
-			<p>Test</p>
-			<div>
+			<div id="text">
+				<h2>Breeding Roller Demo</h2>
+				<p id="browser">Headsup, it is recommended you use this roller with a Chrome-based browser, some things may not work as expected on other browsers. 😅</p>
+				<p>Welcome! This is a demo version of my custom breeding roller commissions. To view a legend of available genes hit the 'i' button in the top right.</p>
+				<p>If you have any questions or would like to enquire about a commission you can contact me at <a href="mailto: abaturestudio@gmail.com">abaturestudio@gmail.com</a>, or through <a href="https://www.deviantart.com/miscnapier">DeviantART</a> or <a href="https://discordapp.com/users/352934986396991489">Discord</a>.</p>
+			</div>
+			<div id="parents">
 				<span class="single-line"><label for="sire"><b>Sire:</b></label><input type="text" id="sire" placeholder="Ee Aa..."></input></span>
 				<br>
 				<span class="single-line"><label for="dam"><b>Dam:</b></label><input type="text" id="dam" placeholder="Ee Aa..."></input></span>
