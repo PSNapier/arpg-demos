@@ -161,9 +161,9 @@ function handleColour(sire, dam) {
 }
 
 function roll() {
-	let sire = new Parent('sire');
-	let dam = new Parent('dam');
-	let offspring = new Offspring('offspring', sire, dam);
+	const sire = new Parent('sire');
+	const dam = new Parent('dam');
+	const offspring = new Offspring('offspring', sire, dam);
 	$('#output').html(`<b>Geno:</b> ${offspring.colour.geno}
 	<br><b>Pheno:</b> ${offspring.colour.pheno}`);
 }

@@ -14,7 +14,7 @@ services:
     links:
       - php
     ports:
-      - 8000:80
+      - 8005:80
     volumes:
       - ./src:/var/www
       - ./nginx.conf:/etc/nginx/conf.d/ngnix.conf
