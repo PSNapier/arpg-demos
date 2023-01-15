@@ -1,6 +1,6 @@
 /* ? */
 #wrapper {
-	min-height: 100vh;
+	min-height: calc(100vh - 30px);
 	display: flex;
 	flex-flow: column wrap;
 	overflow: hidden;
@@ -65,7 +65,7 @@ label {
 }
 
 #text p {
-	font-size: 80%;
+	font-size: 75%;
 	/* font-weight: bold; */
 }
 

@@ -169,6 +169,27 @@ li::before {
 	color: var(--color-dark)
 }
 
+/* nav */
+nav {
+	height: 30px;
+	background-color: var(--color-accent);
+}
+
+nav ul,
+nav li,
+nav li::before,
+nav a,
+nav a:hover,
+nav a:focus,
+nav a:active {
+	all: unset;
+}
+
+nav li {
+	font-size: 100%;
+}
+
+
 /* buttons */
 button {
 	background-color: var(--color-dark);
