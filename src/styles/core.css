@@ -187,6 +187,7 @@ nav a:active {
 
 nav ul {
 	display: flex;
+	flex-wrap: nowrap;
 	height: 100%;
 	cursor: pointer;
 }
@@ -197,7 +198,7 @@ nav li {
 	height: 100%;
 	padding-inline: var(--padding-200);
 	font-family: var(--font-200);
-	font-size: 80%;
+	font-size: 75%;
 	font-weight: bold;
 }
 
@@ -208,6 +209,19 @@ nav li:active {
 	filter: brightness(125%);
 }
 
+/* #header-desktop {
+	display: none;
+}
+
+@media (min-width: 720px) {
+	#header-mobile {
+		display: none;
+	}
+
+	#header-desktop {
+		display: flex;
+	}
+} */
 
 /* buttons */
 button {
