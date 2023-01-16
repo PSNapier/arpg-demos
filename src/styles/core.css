@@ -185,8 +185,27 @@ nav a:active {
 	all: unset;
 }
 
+nav ul {
+	display: flex;
+	height: 100%;
+	cursor: pointer;
+}
+
 nav li {
-	font-size: 100%;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding-inline: var(--padding-200);
+	font-family: var(--font-200);
+	font-size: 80%;
+	font-weight: bold;
+}
+
+nav li:hover,
+nav li:focus,
+nav li:active {
+	background-color: var(--color-accent);
+	filter: brightness(125%);
 }
 
 

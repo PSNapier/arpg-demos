@@ -21,8 +21,8 @@
 	<body>
 		<nav>
 			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/breeding-roller">Breeding Roller Demo</a></li>
+				<li><a href="/">ARPG Rollers</a></li>
+				<li><a href="/breeding-roller">💞 Breeding Roller</a></li>
 			</ul>
 		</nav>
 		<div id="wrapper">

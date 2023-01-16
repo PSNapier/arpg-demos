@@ -1,8 +1,8 @@
 <?php
 include_once 'header.php';
 
-if ($_SERVER['REQUEST_URI'] !== '/') {
-	$page = $_SERVER['REQUEST_URI'];
+$page = $_SERVER['REQUEST_URI'];
+if ($page !== '/' && file_exists("views$page.php")) {
 	include_once "views$page.php";
 }
 else {
