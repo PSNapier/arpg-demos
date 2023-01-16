@@ -1,13 +1,18 @@
 <head>
 	<!-- Page -->
-	<title>ARPG Roller Demos</title>
+	<title>Randomizer Roller Demo</title>
 
 	<!-- Importing -->
 	<link rel="stylesheet" href="styles/landing.css?v=<?php echo time(); ?>">
 	<script src="js/dictionaries.js?v=<?php echo time(); ?>" defer></script>
 	<script src="js/populate.js?v=<?php echo time(); ?>" defer></script>
-	<script src="js/roller.js?v=<?php echo time(); ?>" defer></script>
+	<script src="js/randomizer-roller.js?v=<?php echo time(); ?>" defer></script>
 </head>
+
+<div id="legend">
+	<button id="legend-button" class="button-icon" title="Legend" onclick="slideLeft('legend-drawer')"><ion-icon name="information-circle-outline"></ion-icon></button>
+	<div id="legend-drawer" class="hidden">- Test<br>- Test<br>- Test</div>
+</div>
 
 <article>
 	<svg id="decoration" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
@@ -16,9 +21,16 @@
 
 	<div id="input">
 		<div id="text">
-			<h2>ARPG Roller Demos</h2>
-			<p>Welcome! This is a home for all of the demo versions of my custom breeding roller commissions (see the navbar above).</p>
+			<h2>Randomizer Roller Demo</h2>
+			<p id="browser">Headsup, it is recommended you use this roller with a Chrome-based browser, some things may not work as expected on other browsers. 😅</p>
+			<p>Welcome! This is a demo version of my custom randomizer roller commissions. To view a legend of available genes hit the 'i' button in the top right.</p>
 			<?php include_once 'contact-me.php' ?>
 		</div>
+		<button onclick="roll()">Roll Horse!</button>
+	</div>
+	<div id="output" class="row justify-content-center">
+		<b>Sex:</b> Stallion
+		<br><b>Geno:</b> Ee Aa...
+		<br><b>Pheno:</b> Bay...
 	</div>
 </article>

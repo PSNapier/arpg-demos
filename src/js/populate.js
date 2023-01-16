@@ -20,6 +20,9 @@ function populateLegend(id) {
 		output.push('');
 	}
 
+	output.push(`All bases have an equal chance of occuring (chooses from Black, Seal-Bay, Bay and Chestnut at random, and then randomly between all black and agouti variations that are applicable for the base)`);
+	output.push(`Dilutions, white-patterns and KIT each have a 10% of appearing, 25% dominant and 75% recessive (realistic KIT is not currently implemented).`);
+
 	$(`#${id}`).html(`${output.join('<br>')}`);
 }
 populateLegend('legend-drawer');

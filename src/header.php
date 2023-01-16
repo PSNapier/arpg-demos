@@ -22,7 +22,8 @@
 		<nav>
 			<ul>
 				<li><a href="/">ARPG Rollers</a></li>
-				<li><a href="/breeding-roller">💞 Breeding Roller</a></li>
+				<li><a href="/breeding-roller">💞 Breeding</a></li>
+				<li><a href="/randomizer-roller">🎲 Randomizer</a></li>
 			</ul>
 		</nav>
 		<div id="wrapper">

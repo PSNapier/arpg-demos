@@ -253,7 +253,7 @@ select {
 }
 
 label {
-	unset: all;
+	all: unset;
 	display: inline-block;
 	text-align: left;
 }
