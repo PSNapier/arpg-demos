@@ -24,6 +24,7 @@
 			<h2>Randomizer Roller Demo</h2>
 			<p id="browser">Headsup, it is recommended you use this roller with a Chrome-based browser, some things may not work as expected on other browsers. 😅</p>
 			<p>Welcome! This is a demo version of my custom randomizer roller commissions. To view a legend of available genes hit the 'i' button in the top right.</p>
+			<p>All bases have an equal chance of occuring (chooses from Black, Seal-Bay, Bay and Chestnut at random, and then randomly between all black and agouti variations that are applicable for the base). Dilutions, white-patterns and KIT each have a 10% of appearing, 25% dominant and 75% recessive (realistic KIT is not currently implemented).</p>
 			<?php include_once 'contact-me.php' ?>
 		</div>
 		<button onclick="roll()">Roll Horse!</button>
