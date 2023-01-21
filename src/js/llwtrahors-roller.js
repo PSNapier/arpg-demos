@@ -21,8 +21,9 @@ function handleColour(sire, dam) {
 	function handleSlime() {
 		// get parents
 		const regex = new RegExp(`(?<=\().+(?=\))`,'');
-		const sire = sire.geno.matchy(regex)[1] || '#ffffff00'
-		console.log(sire);
+		const geneSire = sire.geno.matchy(regex)[1].split(/,\s|,|\s/g) || '#ffffff00'
+		const geneDam = dam.geno.matchy(regex)[1].split(/,\s|,|\s/g) || '#ffffff00'
+		console.log(geneSire, geneDam);
 
 		const Color = window.ColorInterpreter.Color;
 		let slime = new Color("#7de273").toHSLA();

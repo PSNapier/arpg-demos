@@ -34,14 +34,14 @@
 		<button onclick="roll()">Roll Foal!</button>
 	</div>
 
-	<div id="color-preview-wrapper" class="flex-row flex-center">
-		<div id="color-preview-1" class="color-preview"></div>
+	<div id="color-preview" class="flex-row flex-center">
+		<div id="color-preview-1" class="color-preview" style="background-color: #000000ff"></div>
 		<div id="color-preview-2" class="color-preview"></div>
 		<div id="color-preview-3" class="color-preview"></div>
 		<div id="color-preview-4" class="color-preview"></div>
 		<div id="color-preview-5" class="color-preview"></div>
 	</div>
 	<div id="output" class="flex-row">
-		<b>Geno:</b> (#7de273)...
+		<b>Geno:</b>&nbsp;(#7de273)...
 	</div>
 </article>
