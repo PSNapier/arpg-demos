@@ -1,0 +1,15 @@
+#color-preview-wrapper {
+	margin-top: var(--stack-200)
+}
+
+.color-preview {
+	height: 5rem;
+	width: 5rem;
+	background-color: hsla(0, 0%, 100%, 0.0);
+	border: .1rem solid black;
+	border-radius: .5rem;
+}
+
+.color-preview + .color-preview {
+	margin-left: var(--padding-300);
+}
